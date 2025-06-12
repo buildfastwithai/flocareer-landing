@@ -2,7 +2,15 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle, Clock, Users, Star, Video, Sun, Moon } from "lucide-react";
+import {
+  CheckCircle,
+  Clock,
+  Users,
+  Star,
+  Video,
+  Sun,
+  Moon,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
@@ -63,22 +71,20 @@ export default function HomePage() {
             transition={{ duration: 0.7 }}
           >
             <BoxReveal>
-
               <h1 className="text-4xl md:text-6xl font-bold">
-                Hire <span className="text-blue-400">
-                  <AnimatedGradientText>
-                    Software Developer
-                  </AnimatedGradientText>
+                Hire{" "}
+                <span className="text-blue-400">
+                  <AnimatedGradientText>Any Talent</AnimatedGradientText>
                 </span>
                 <br /> 10x faster, smarter at scale.
               </h1>
             </BoxReveal>
             <BoxReveal>
-
               <p className="mt-6 text-lg max-w-xl">
-                Empower your hiring process with our interview-as-a-service solution.
-                Conduct technical interviews outsourcing by our seasoned Experts.
-                Scale effortlessly, with 24x7x365 availability.
+                Empower your hiring process with our interview-as-a-service
+                solution. Conduct technical interviews outsourcing by our
+                seasoned Experts. Scale effortlessly, with 24x7x365
+                availability.
               </p>
             </BoxReveal>
             <InteractiveHoverButton className="mt-6 bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 rounded-full px-8 py-4 text-lg font-medium transition-all duration-300 shadow-xl hover:shadow-orange-500/25">
@@ -131,16 +137,20 @@ export default function HomePage() {
               visible: { transition: { staggerChildren: 0.2 } },
             }}
           >
-            {["AI Interviewer", "JD Question Generator", "AI Interview Evaluation"].map((title, i) => {
+            {[
+              "AI Interviewer",
+              "JD Question Generator",
+              "AI Interview Evaluation",
+            ].map((title, i) => {
               const descriptions = [
                 "Simulates real-time technical interviews with contextual follow-ups and live coding evaluation — freeing up your internal team.",
                 "Upload a Job Description and instantly generate custom interview questions using our Gen AI engine trained on 10K+ JDs.",
-                "Get automated, unbiased scoring and detailed feedback on candidate performance powered by our AI evaluation framework."
+                "Get automated, unbiased scoring and detailed feedback on candidate performance powered by our AI evaluation framework.",
               ];
               const icons = [
                 <Video className="w-8 h-8 text-orange-500" />,
                 <Users className="w-8 h-8 text-blue-400" />,
-                <Star className="w-8 h-8 text-green-400" />
+                <Star className="w-8 h-8 text-green-400" />,
               ];
               return (
                 <motion.div
@@ -160,14 +170,17 @@ export default function HomePage() {
                       <p className="text-sm text-gray-400">{descriptions[i]}</p>
                     </CardContent>
                   </MagicCard>
-
                 </motion.div>
               );
             })}
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.05 }} className="mt-10">
-            <Button variant="gradient" size="lg" className="hover:shadow-orange-500/25">
+            <Button
+              variant="gradient"
+              size="lg"
+              className="hover:shadow-orange-500/25"
+            >
               Try AI Interview Suite
             </Button>
           </motion.div>
@@ -247,7 +260,6 @@ export default function HomePage() {
           </section> */}
 
       <section className="py-10">
-
         <MarqueeDemo />
       </section>
       {/* Features */}
@@ -284,15 +296,23 @@ export default function HomePage() {
                     <div className="text-blue-400">{icon}</div>
                     <h3 className="text-xl font-semibold">{title}</h3>
                     <p className="text-sm text-gray-400">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, incidunt.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ipsam, incidunt.
                     </p>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
           </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }} className="text-center mt-10">
-            <Button variant="gradient" size="lg" className="hover:shadow-orange-500/25">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="text-center mt-10"
+          >
+            <Button
+              variant="gradient"
+              size="lg"
+              className="hover:shadow-orange-500/25"
+            >
               Interview as a Service
             </Button>
           </motion.div>
