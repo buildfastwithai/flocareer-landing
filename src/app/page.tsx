@@ -28,6 +28,7 @@ import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-b
 import WorkflowSectionDark from "./components/InterviewProcess";
 import { MarqueeDemo } from "./components/marquee";
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
+import Link from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -154,41 +155,6 @@ export default function HomePage() {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </InteractiveHoverButton>
-
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-gray-700 hover:border-blue-500 bg-gray-900/50 backdrop-blur-sm hover:bg-blue-500/10 transition-all duration-300"
-              >
-                <span className="flex items-center gap-2">
-                  <Video className="w-5 h-5" />
-                  Watch Demo
-                </span>
-              </Button>
-            </motion.div>
-
-            {/* Trust Indicators */}
-            <motion.div
-              className="flex items-center gap-6 pt-6 text-sm text-gray-400"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-            >
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <div
-                      key={i}
-                      className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 border-2 border-gray-900"
-                    ></div>
-                  ))}
-                </div>
-                <span>Join 6.1K+ companies</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span>4.9/5 rating</span>
-              </div>
             </motion.div>
           </motion.div>
 
@@ -300,20 +266,14 @@ export default function HomePage() {
           >
             {[
               {
-                title: "AI Interviewer",
-                description:
-                  "Simulates real-time technical interviews with contextual follow-ups and live coding evaluation — freeing up your internal team.",
-                icon: <Video className="w-8 h-8" />,
-                gradient: "from-orange-500 to-red-500",
-                bgGradient: "from-orange-500/20 to-red-500/20",
-              },
-              {
                 title: "JD Question Generator",
                 description:
                   "Upload a Job Description and instantly generate custom interview questions using our Gen AI engine trained on 10K+ JDs.",
                 icon: <Users className="w-8 h-8" />,
                 gradient: "from-blue-500 to-cyan-500",
                 bgGradient: "from-blue-500/20 to-cyan-500/20",
+                link: "https://octopus-app-fp22q.ondigitalocean.app",
+                launch: true,
               },
               {
                 title: "AI Interview Evaluation",
@@ -322,6 +282,18 @@ export default function HomePage() {
                 icon: <Star className="w-8 h-8" />,
                 gradient: "from-green-500 to-emerald-500",
                 bgGradient: "from-green-500/20 to-emerald-500/20",
+                link: "https://interview-evaluation-jpnua.ondigitalocean.app",
+                launch: true,
+              },
+              {
+                title: "AI Interviewer",
+                description:
+                  "Simulates real-time technical interviews with contextual follow-ups and live coding evaluation — freeing up your internal team.",
+                icon: <Video className="w-8 h-8" />,
+                gradient: "from-orange-500 to-red-500",
+                bgGradient: "from-orange-500/20 to-red-500/20",
+                link: "https://interview-evaluation-jpnua.ondigitalocean.app",
+                launch: false,
               },
             ].map((feature, i) => (
               <motion.div
@@ -354,13 +326,19 @@ export default function HomePage() {
                       </p>
                     </div>
 
-                    <motion.div
-                      className="flex items-center gap-2 text-blue-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      whileHover={{ x: 5 }}
-                    >
-                      <span>Learn more</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.div>
+                    {feature.launch ? (
+                      <Link
+                        href={feature.link}
+                        target="_blank"
+                        className="flex items-center gap-2 text-blue-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        Learn more <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    ) : (
+                      <span className="flex items-center gap-2 text-blue-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Coming Soon
+                      </span>
+                    )}
                   </CardContent>
                 </MagicCard>
               </motion.div>

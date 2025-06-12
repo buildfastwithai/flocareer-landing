@@ -32,7 +32,7 @@ export default function Navbar() {
     <motion.nav
       animate={{ y: show ? 0 : -100 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md fixed top-0 w-full z-50"
+      className="bg-transparent fixed top-0 w-full z-50"
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
